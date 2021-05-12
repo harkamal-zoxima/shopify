@@ -33,7 +33,9 @@ function Product(props) {
               <button className="addButton" onClick={() => setIsOpen(true)}>
                 Add To Cart
               </button>
+              <div className="dialogBox">
               <AddToCart open={isOpen} onClose={() => setIsOpen(false)} />
+              </div>
 
 
               <div className="buttonsDiv">

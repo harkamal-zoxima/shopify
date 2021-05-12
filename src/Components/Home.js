@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Home.css";
 import banner from "../Assets/banner.jpg";
 import banner2 from "../Assets/banner2.jpg";
@@ -9,6 +9,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import { Link } from "react-router-dom";
 import Footer from "./Footer";
+import Conditions from './Conditions'
 
 function Home() {
   var settings = {
@@ -20,6 +21,8 @@ function Home() {
     adaptiveHeight: true,
     arrows: false,
   };
+
+  const [isOpen, setIsOpen] = useState(true);
 
   return (
     <>
@@ -107,7 +110,13 @@ function Home() {
         <h4 className="titlePro">Calvin Klein One Unisex EDT</h4>
         </div>
       </div>
-      
+
+      {/* IIFE example */}
+
+      (function(){
+        <Conditions open={isOpen} onClose={() => setIsOpen(false)}/>
+      })()
+
       <Footer />
     </>
   );

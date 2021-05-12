@@ -1,11 +1,14 @@
 import React from "react";
 import "./Header.css";
 import { Link } from "react-router-dom";
+import shopiffy from '../Assets/shopiffy.png'
 
 function Header(props) {
   return (
-    <>
-      <ul style={{ backgroundColor: props.bg, height: "50px" }}>
+    <div style={{ display: "flex", backgroundColor: props.bg, height: "50px",width:"100%"}}>
+      <h2 className="logoTitle">SHOPIFFY</h2>
+      <img src={shopiffy} style={{height:"32px",width:"32px",marginTop:"7px"}}/>
+      <ul style={{display:"flex",justifyContent:"space-around",width:"85vw"}}>
         <li>
           <Link to="/" className="listItems">
             Home
@@ -30,7 +33,7 @@ function Header(props) {
           </Link>
         </li>
       </ul>
-    </>
+    </div>
   );
 }
 
