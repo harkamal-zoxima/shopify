@@ -24,6 +24,12 @@ function Home() {
 
   const [isOpen, setIsOpen] = useState(true);
 
+  {/* IIFE example */}
+
+  (()=>{
+    console.log("IIFE workingg");
+  })();
+
   return (
     <>
       <div style={{ marginTop: "10px" }}>
@@ -111,11 +117,9 @@ function Home() {
         </div>
       </div>
 
-      {/* IIFE example */}
+      <Conditions open={isOpen} onClose={() => setIsOpen(false)}/>
 
-      (function(){
-        <Conditions open={isOpen} onClose={() => setIsOpen(false)}/>
-      })()
+      
 
       <Footer />
     </>
