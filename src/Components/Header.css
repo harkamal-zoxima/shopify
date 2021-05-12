@@ -1,0 +1,22 @@
+ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    /* width: 100%; */
+    overflow-x: hidden;
+}
+
+.listItems{
+    text-decoration:none;
+    color: #0f5c86;
+    margin-top: 6px;
+    font-size: 20px;
+    font-weight: 500;
+   
+}
+
+.listItems:hover{
+    cursor: pointer;
+    
+}
+

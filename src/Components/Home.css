@@ -1,0 +1,15 @@
+.productDiv img{
+    height: 231px;
+    width: 215px;
+}
+
+.productDiv{
+    margin-top: 30px;
+    display: flex;
+}
+
+.titlePro{
+    width: 160px;
+    text-align: center;
+    margin-left: 28px;
+}
