@@ -9,7 +9,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import { Link } from "react-router-dom";
 import Footer from "./Footer";
-import Conditions from './Conditions'
+import {Conditions} from './Conditions'
 
 function Home() {
   var settings = {
@@ -26,7 +26,7 @@ function Home() {
 
   {/* IIFE example */}
 
-  (()=>{
+  (function(){
     console.log("IIFE workingg");
   })();
 
@@ -118,8 +118,7 @@ function Home() {
 
       <Conditions open={isOpen} onClose={() => setIsOpen(false)}/>
 
-      
-
+    
       <Footer />
     </>
   );

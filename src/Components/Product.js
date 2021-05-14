@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import "./Product.css";
 import UpdatedComp from "../Hoc/withCounter";
-import AddToCart from "./AddToCart";
+import {AddToCart} from "./Conditions";
 
 function Product(props) {
   const { id } = useParams();
