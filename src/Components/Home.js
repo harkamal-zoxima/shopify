@@ -12,13 +12,14 @@ import Footer from "./Footer";
 import { Conditions } from "./Conditions";
 import { useDispatch, useSelector } from "react-redux";
 import { setProduct } from "../redux/actions/productActions";
+import {addToBasket} from '../redux/actions/cartActions'
 import axios from "axios";
 
 function Home() {
   const products = useSelector((state) => state.allProducts.products);
   const dispatch = useDispatch();
 
-  console.log(products);
+  // console.log(products);
 
   const fetchProducts = async () => {
     const response = await axios
@@ -31,6 +32,7 @@ function Home() {
   useEffect(() => {
     fetchProducts();
   }, []);
+
 
   var settings = {
     dots: true,
@@ -64,18 +66,16 @@ function Home() {
       </div>
 
       <div className="productDiv">
-      {products.map((item) => {
-        return (
-          
-            <div className="outerDiv" >
+        {products.map((item) => {
+          return (
+            <div className="outerDiv">
               <img className="homeImage" src={item.image} />
               <p className="titlePro">{item.title}</p>
               <h3 className="price">${item.price}</h3>
-              <button className="cartButtons addtocart">Add to Cart</button>
+              <button onClick={()=>dispatch(addToBasket(item))} className="cartButtons addtocart">Add to Cart</button>
             </div>
-          
-        );
-      })}
+          );
+        })}
       </div>
 
       <Conditions open={isOpen} onClose={() => setIsOpen(false)} />
@@ -86,8 +86,3 @@ function Home() {
 }
 
 export default Home;
-
-
-
-
-
