@@ -1,22 +1,54 @@
-import React, { useState } from "react";
+import React from "react";
+import { createStore } from "redux";
 
 const UpdatedComp = (OldComp) => {
   const NewComp = () => {
-    const [count, setCount] = useState(0);
+    const ADD_PRODUCT = "ADD_PRODUCT";
+    const DELETE_PRODUCT = "DELETE_PRODUCT";
 
-    const incrementCount = () => {
-      setCount(count + 1);
+    const addFunction = () => {
+      return {
+        type: ADD_PRODUCT,
+        info: "Just to add the product",
+      };
     };
 
-    const decrementCount = () => {
-      count>0 && setCount(count - 1);
+    const deleteFunction = () => {
+      return {
+        type: DELETE_PRODUCT,
+        info: "Just to remove the product",
+      };
     };
+
+    const initialState = {
+      count: 0,
+      payload: "anything",
+    };
+
+    const reducer = (state = initialState, action) => {
+      console.log(state);
+
+      switch (action.type) {
+        case ADD_PRODUCT:
+          return { ...state, count: state.count + 1 };
+
+        case DELETE_PRODUCT:
+          if(state.count > 0) return { ...state, count: state.count - 1 };
+
+        default:
+          return state;
+      }
+    };
+
+    const store = createStore(reducer);
+
+    // store.subscribe(() => console.log(store.getState()));
 
     return (
       <OldComp
-        count={count}
-        incrementCount={incrementCount}
-        decrementCount={decrementCount}
+        count={store.getState().count}
+        incrementCount={() => store.dispatch(addFunction())}
+        decrementCount={() => store.dispatch(deleteFunction())}
       />
     );
   };

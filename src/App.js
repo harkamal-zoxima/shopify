@@ -1,12 +1,12 @@
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Home from "./Components/Home";
-import Explore from './Components/Explore'
-import About from './Components/About'
-import Cart from './Components/Cart'
-import Product from "./Components/Product";
+import Home from "./components/Home";
+import Explore from './components/Explore'
+import About from './components/About'
+import Cart from './components/Cart'
+import Product from "./components/Product";
 import { useState } from "react";
-import Header from './Components/Header'
+import Header from './components/Header'
 
 function App() {
   const [color, setColor] = useState("#FBD1D2");
