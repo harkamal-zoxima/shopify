@@ -1,8 +1,18 @@
-.imgSize{
-    height: 200px;
-    width: 200px;
+.imgSize {
+  height: 200px;
+  width: 200px;
 }
 
-.counter{
-    margin-top: 12px ;
+.counter {
+  margin-top: 12px;
+}
+
+.outerDivv {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  border: 1px solid black;
+  flex-direction: row;
+  width: 60%;
+  border-radius: 20px;
 }
